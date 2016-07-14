@@ -4,11 +4,15 @@
         <template id="product_price" name="product_price_inherit" inherit_id="website_sale.product_price">
             <xpath expr="//div[1]" position="replace"/>
         </template>
-        
+
         <!-- Hide price from the product grid view -->
         <template id="products" name="products_inherit" inherit_id="website_sale.products_item">
             <xpath expr="//div[@class='product_price']" position="replace"/>
         </template>
-                
+
+        <template id="variants" name="variants_inherit" inherit_id="website_sale.variants">
+            <xpath expr="//span[@t-if='value_id.price_extra']" position="replace"/>
+        </template>
+
     </data>
 </openerp>
